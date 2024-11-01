@@ -11,8 +11,7 @@ const KaliciGiris = () => {
   const { auth, persist } = useAuth();
   const logout = useLogout();
   const navigate = useNavigate();
-  console.log('auth?.accessToken ', auth?.accessToken )
-  console.log('persist ', persist )
+
  useEffect(()=>{
     setYukleniyor(true);
     const tokenYenilemeDogrula = async () => {
@@ -31,8 +30,6 @@ const KaliciGiris = () => {
       }else{
         console.log("Token var")
       }
-      /* !persist && !auth?.accessToken ? (logout): tokenYenilemeDogrula() 
-      !auth?.accessToken ?  tokenYenilemeDogrula() : console.log("Token var"); */
       setYukleniyor(false);
  }, [auth])
 

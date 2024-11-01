@@ -45,10 +45,9 @@ const Kayit: React.FC = () => {
     email: string;
     confirm: string;
   }) => {
-    console.log("values", values);
     setYukleniyor(true);
     try {
-      const response = await axios.post(
+      await axios.post(
         KAYIT_URL,
         {
             username: values.username,
@@ -61,7 +60,6 @@ const Kayit: React.FC = () => {
           withCredentials: true,
         }
       );
-      console.log("response", response.data);
       setBasarili(true);
       message.success("Kayıt başarılı!");
       form.resetFields();
